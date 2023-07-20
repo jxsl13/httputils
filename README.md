@@ -1,6 +1,6 @@
 # httputils
 
-*httputils* is a library for testing `http.Handler` in unit tests without startinh the actual webservice.
+*httputils* is a library for testing `http.Handler` in unit tests without starting the actual web service.
 
 
 ```shell
