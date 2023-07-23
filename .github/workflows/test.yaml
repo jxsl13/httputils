@@ -24,16 +24,17 @@ jobs:
   test:
     strategy:
       matrix:
-        go-version: ['stable']
+        go-version: ['stable', 'oldstable']
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Install Go
       uses: actions/setup-go@v4
       with:
         go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v3
 
     - name: Vet
       run: go vet ./...
